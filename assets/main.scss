@@ -54,20 +54,20 @@ since it must be aligned with the content */
 	color: $text-color;
 }
 
-/*** logo ***/
-.logo-container {
+/*** headshot ***/
+.headshot-container {
 	text-align: center;
 }
 
-.logo {
-	width: 96px;
-	height: 96px;
+.headshot {
+	width: 196px;
+	height: 196px;
 	display: inline-block;
 	background-size: cover;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
-	border: 2px solid $background-color;
-	box-shadow: 0 0 0 3px $text-color;
+	border: 1px solid $background-color;
+	box-shadow: 0 0 0 1px $text-color;
 }
 
 /*** author ***/
@@ -138,7 +138,7 @@ footer {
 	}
 
 	.author-container h1,
-	.logo-container,
+	.headshot-container,
 	.tagline-container p {
 		text-align: right;
 	}
