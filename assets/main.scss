@@ -9,6 +9,7 @@ body {
 	font-family: 'Vollkorn', serif;
 	color: $text-color;
 	background-color: $background-color;
+	line-height: 1.6;
 }
 
 header,
@@ -18,7 +19,10 @@ main {
 
 /*** wrapper div for both header and main ***/
 .wrapper {
-	margin-top: 10%;
+	margin-top: 8%;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*** anchor tags ***/
@@ -57,32 +61,67 @@ since it must be aligned with the content */
 /*** headshot ***/
 .headshot-container {
 	text-align: center;
+	margin-bottom: 2em;
 }
 
 .headshot {
-	width: 196px;
-	height: 196px;
+	width: 180px;
+	height: 180px;
 	display: inline-block;
 	background-size: cover;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
-	border: 1px solid $background-color;
-	box-shadow: 0 0 0 1px $text-color;
+	border: 3px solid #f4f2e5;
+	box-shadow: 0 2px 12px rgba(70, 67, 58, 0.15);
 }
 
 /*** author ***/
 .author-container h1 {
-	font-size: 2.8em;
+	font-size: 2.6em;
 	margin-top: 0;
-	margin-bottom: 0;
+	margin-bottom: 0.2em;
 	text-align: center;
+	font-weight: 400;
 }
 
 /*** tagline ***/
 .tagline-container p {
-	font-size: 1.3em;
+	font-size: 1.2em;
 	text-align: center;
-	margin-bottom: 2em;
+	margin-bottom: 2.5em;
+	font-style: italic;
+	color: #3d3a2f;
+}
+
+/*** content area styling ***/
+.content {
+	margin-top: 1em;
+}
+
+.content h2 {
+	font-size: 1.5em;
+	margin-bottom: 1em;
+	margin-top: 2em;
+	font-weight: 600;
+	color: #3a3729;
+}
+
+.content h2:first-child {
+	margin-top: 0;
+}
+
+.content p {
+	margin-bottom: 1.2em;
+	line-height: 1.7;
+}
+
+.content dfn {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.1em;
+	display: block;
+	margin: 1.5em 0;
+	color: #363324;
 }
 
 /******/
@@ -93,6 +132,7 @@ hr {
 	background-image: -moz-linear-gradient(left, rgba(0,0,0,0), $text-color, rgba(0,0,0,0));
 	background-image: -ms-linear-gradient(left, rgba(0,0,0,0), $text-color, rgba(0,0,0,0));
 	background-image: -o-linear-gradient(left, rgba(0,0,0,0), $text-color, rgba(0,0,0,0));
+	margin: 2em 0;
 }
 
 /*** footer ***/
@@ -116,25 +156,25 @@ footer {
 	/* wrapper stays 480px wide past 480px wide and is kept centered */
 	.wrapper {
 		width: 480px;
-		margin: 10% auto 0 auto;
+		margin: 8% auto 0 auto;
 	}
 }
 
 /* All other devices (800px and up) */
 @media (min-width: 800px) {
-	/* past 768px the layout is changed and the wrapper has a fixed width of 680px
-	to accomodate both the header column and the content column */
 	.wrapper {
-		width: 780px;
+		width: 720px;
+		margin-top: 5%;
+		display: grid;
+		grid-template-columns: 280px 1fr;
+		gap: 40px;
+		align-items: baseline;
 	}
 
-	/* the header column stays left and has a dynamic width with all contents
-	aligned right */
 	header {
-		float: left;
-		width: 46%;
 		text-align: right;
-		margin-top: -15px;
+		padding: 0;
+		margin-top: 0;
 	}
 
 	.author-container h1,
@@ -143,9 +183,15 @@ footer {
 		text-align: right;
 	}
 
+	.headshot-container {
+		margin-bottom: 1.5em;
+	}
+
 	main {
-		width: 46%;
-		margin-left: 54%;
 		padding: 0;
+	}
+
+	.content {
+		margin-top: 0;
 	}
 }
