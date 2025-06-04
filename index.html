@@ -1,0 +1,28 @@
+---
+layout: base
+---
+<div class="wrapper">
+    <header>
+
+        {% if site.author %}
+        <div class="author-container"><h1>{{ site.author }}</h1></div>
+        {% endif %}
+
+
+        {% if site.tagline %}
+        <div class="tagline-container"><p>{{ site.tagline }}</p></div>
+        {% endif %}
+
+        <div class="headshot-container">
+          <div class="headshot" style="background-image: url('{{ site.baseurl }}/assets/barbarasax.jpg')"></div>
+        </div>
+
+    </header>
+    <main>
+      {% if site.include_content %}
+      <div class="content">
+        {% include content.html %}
+      </div>
+      {% endif %}
+    </main>
+</div>
